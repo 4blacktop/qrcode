@@ -6,24 +6,27 @@
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript">
 function scan(){
-	console.log("clicked");
+	// console.log("clicked");
+	document.getElementById('result').innerHTML = 'test';
 	cordova.plugins.barcodeScanner.scan(function(result){
-	//success callback
-	alert(JSON.stringify(result));
-	alert("We got a barcode\n" +
-		"Result: " + result.text + "\n" +
-		"Format: " + result.format + "\n" +
-		"Cancelled: " + result.cancelled);
+		// success callback
+		// alert(JSON.stringify(result));
+		// alert("We got a barcode\n" +
+		// "Result: " + result.text + "\n" +
+		// "Format: " + result.format + "\n" +
+		// "Cancelled: " + result.cancelled);
+		document.getElementById('result').innerHTML = "Result: " + result.text + "\n" + "Format: " + result.format + "\n" + "Cancelled: " + result.cancelled;
 		
 	},function(error){
-		//error callback
-		alert(JSON.stringify(error));
-			alert("Scanning failed: " + error);
+		// error callback
+		// alert(JSON.stringify(error));
+		// alert("Scanning failed: " + error);
+		document.getElementById('result').innerHTML = JSON.stringify(error);
 	},
 	{
-          "preferFrontCamera" : true, // iOS and Android
-          "showFlipCameraButton" : true, // iOS and Android
-          "prompt" : "Place a barcode inside the scan area", // supported on Android only
+          "preferFrontCamera" : false, // iOS and Android
+          "showFlipCameraButton" : false, // iOS and Android
+          // "prompt" : "Place a barcode inside the scan area", // supported on Android only
           "formats" : "QR_CODE", // default: all but PDF_417 and RSS_EXPANDED
           "orientation" : "portrait" // Android only (portrait|landscape), default unset so it rotates with the device
       }
@@ -48,6 +51,17 @@ h1 {
 	background-color: white;
 	width: 50%;
 	margin: auto;
+}
+
+#result {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 90px;
+	border: black 2px;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: larger;
 }
 
 .wrapper{
@@ -112,5 +126,6 @@ h1 {
 <!-- https://www.sitepoint.com/scanning-qr-code-cordova/ -->
 <!-- https://github.com/nickgal/phonegap-plugin-barcodescanner -->
 <!-- https://www.npmjs.com/package/ng-phonegap-plugin-barcodescanner -->
+<div id="result"></div>
 </body>
 </html>
