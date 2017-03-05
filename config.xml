@@ -14,7 +14,9 @@
     </author>
 
     <!-- <gap:plugin name="com.phonegap.plugins.barcodescanner"/> -->
-    <gap:plugin name="com.manateeworks.barcodescanner"  source="npm" />
+    <!-- <gap:plugin name="com.manateeworks.barcodescanner"  source="npm" /> -->
+    <gap:plugin name="com.phonegap.plugins.barcodescanner"  source="npm" /> 
+	
 
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="debug-server" required="true">
@@ -28,7 +30,14 @@
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
     <preference name="webviewbounce"    value="false" />
+	
+	
+	
+	<preference name="android-build-tool" value="gradle" />
 
+	
+	
+	
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
     <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
