@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>QR Code Scanner</title>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript">
+function scan(){
+console.log("clicked");
+cordova.plugins.barcodeScanner.scan(function(result){
+//success callback
+alert(JSON.stringify(result));
+
+},function(error){
+//error callback
+alert(JSON.stringify(error));
+
+});
+}
+</script>
+
+<style>
+
+body{
+	margin: 0;
+	padding: 0;
+
+	background: #6699ff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#cbccc8)) fixed;
+	background: radial-gradient(circle closest-side, #BBDDff 1%, #6699ff 95%) fixed;
+}
+
+.wrapper{
+	position: absolute;
+	top: calc(50% - 50px);
+	left: calc(50% - 50px);
+	background: white;
+	width: 100px;
+	height: 100px;
+}
+
+.scanner{
+	width: 120px;
+	height: 2px;
+	background: red;
+	border-radius: 10px;
+	position: absolute;
+	bottom: 0;
+	left: -10px;
+	-webkit-animation: scanner 4.0s infinite linear;
+}
+
+.scanner div{
+	position: absolute;
+	right: 0px;
+	bottom: 5px;
+	-webkit-animation: flash 4.0s infinite linear;
+}
+
+
+
+.scanner div ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+@-webkit-keyframes scanner{
+	0%{
+	bottom: 5px;
+	}
+	50%{
+	bottom: 90px;
+	}
+	100%{
+	bottom: 5px;
+	}
+}
+</style>
+
+</head>
+<body>
+<h3>BAR CODE SCANNER</h3>
+<button onclick="scan()">SCAN</button>
+</body>
+</html>
