@@ -10,7 +10,7 @@
 
     <!-- <gap:plugin name="com.phonegap.plugins.barcodescanner"/> -->
     <!-- <gap:plugin name="com.manateeworks.barcodescanner"  source="npm" /> -->
-    <gap:plugin name="com.phonegap.plugins.barcodescanner"  source="npm" /> 
+    <plugin name="com.phonegap.plugins.barcodescanner"  source="npm" /> 
 	<plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
 
     <feature name="http://api.phonegap.com/1.0/device" />
