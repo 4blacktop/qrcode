@@ -6,16 +6,28 @@
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript">
 function scan(){
-console.log("clicked");
-cordova.plugins.barcodeScanner.scan(function(result){
-//success callback
-alert(JSON.stringify(result));
-
-},function(error){
-//error callback
-alert(JSON.stringify(error));
-
-});
+	console.log("clicked");
+	cordova.plugins.barcodeScanner.scan(function(result){
+	//success callback
+	alert(JSON.stringify(result));
+	alert("We got a barcode\n" +
+		"Result: " + result.text + "\n" +
+		"Format: " + result.format + "\n" +
+		"Cancelled: " + result.cancelled);
+		
+	},function(error){
+		//error callback
+		alert(JSON.stringify(error));
+			alert("Scanning failed: " + error);
+	},
+	{
+          "preferFrontCamera" : true, // iOS and Android
+          "showFlipCameraButton" : true, // iOS and Android
+          "prompt" : "Place a barcode inside the scan area", // supported on Android only
+          "formats" : "QR_CODE", // default: all but PDF_417 and RSS_EXPANDED
+          "orientation" : "portrait" // Android only (portrait|landscape), default unset so it rotates with the device
+      }
+	);
 }
 </script>
 
@@ -94,8 +106,11 @@ h1 {
 <a href="#" onclick="scan()"><div class="wrapper">
 	<div class="scanner"></div>
 </div></a>
-
 <!-- <h3>BAR CODE SCANNER</h3>
 <button onclick="scan()">SCAN</button> -->
+<!-- https://phonegappro.com/tutorials/phonegap-bar-code-scanner-example/ -->
+<!-- https://www.sitepoint.com/scanning-qr-code-cordova/ -->
+<!-- https://github.com/nickgal/phonegap-plugin-barcodescanner -->
+<!-- https://www.npmjs.com/package/ng-phonegap-plugin-barcodescanner -->
 </body>
 </html>
