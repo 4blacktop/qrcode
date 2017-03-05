@@ -1,66 +1,26 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>BarCode Scanner - PhoneGapPro.com</title>
+ <script type="text/javascript" src="cordova.js"></script>
+ <script type="text/javascript">
+ function scan(){
+ console.log("clicked");
+ cordova.plugins.barcodeScanner.scan(function(result){
+ //success callback
+ alert(JSON.stringify(result));
 
-    http://www.apache.org/licenses/LICENSE-2.0
+ },function(error){
+ //error callback
+ alert(JSON.stringify(error));
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Barcode Scanner Demo</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-			
-  <form style="width: 100%; text-align: center;">
-          <input type="button" value="NEWWW" onclick="cordova.plugins.barcodeScanner.scan()" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;"/>
-          <input type="button" value="Scan fullscreen" onclick="scanner.startScanning()" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;"/>
-          <input type="button" value="Scan in view" onclick="scanner.startScanning(0,4,100,50)" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;"/>
-          <input type="button" value="Pause/Resume" onclick="scanner.togglePauseResume()" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;"/>
-          <input type="button" value="Close" onclick="scanner.stopScanner()" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;"/>
-          <input type="button" value="Flash" onclick="scanner.toggleFlash()" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;"/>
-          <input type="button" value="Zoom" onclick="scanner.toggleZoom()" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;"/>
-      </form>
-      <ul id="mwb_list">
-          
-      </ul>
- </br>
-			
-            <p><a href="#" class="topcoat-button" id="scan">SCAN</a></p>
-            <p><a href="#" class="topcoat-button" id="encode">ENCODE</a></p>
-            <p id="info"></p>
-            <h2>OPENING LINKS:</h2>
-            <p><a href="#" class="topcoat-button" onclick="window.open('http://www.nhl.com', '_blank', 'location=yes');">InAppBrowser</a></p>
-            <p><a href="#" class="topcoat-button" onclick="window.open('http://www.nhl.com', '_system', 'location=yes');">System Browser</a></p>
-            <p><a href="#" class="topcoat-button" onclick="window.open('http://www.yahoo.com', '_self', 'location=yes');">This Webview</a></p>
-            <p><a href="#" class="topcoat-button" onclick="window.plugins.childBrowser.showWebPage('http://www.nhl.com', {});">ChildBrowser</a></p>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-<!--         <script type="text/javascript" src="barcodescanner.js"></script> -->
-        <script type="text/javascript" src="js/index.js"></script>
-<!--         <script type="text/javascript">
-            app.initialize();
-        </script> -->
-    </body>
+ });
+ }
+ </script>
+</head>
+<body>
+ <h3>BAR CODE SCANNER</h3>
+ <button onclick="scan()">SCAN</button>
+</body>
 </html>
