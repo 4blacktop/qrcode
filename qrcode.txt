@@ -1,0 +1,112 @@
+
+
+
+
+
+===
+170403
+
+сертификат для iOS
+http://docs.phonegap.com/phonegap-build/signing/ios/#create-provisioning-profile
+https://www.iandevlin.com/blog/2012/11/phonegap/building-an-ios-signing-key-for-phonegap-in-windows
+
+сертификат для Android
+http://docs.phonegap.com/phonegap-build/signing/android/
+
+
+От регистрации до витрины: как выложить мобильное приложение в App Store и Google Play
+https://habrahabr.ru/company/scorocode/blog/305990/
+https://habrahabr.ru/company/scorocode/blog/307002/
+
+получить сертификат на windows
+https://software.intel.com/en-us/forums/intel-xdk/topic/610893
+
+Сертификация в Apple Developer Center простым и понятным языком
+https://habrahabr.ru/post/280626/
+
+===
+170323
+предзагрузка изображений (jquery, html, проч)
+http://stackoverflow.com/questions/19717611/jquery-preload-images-using-jquery-native-javascript-css
+
+
+===
+170321
+
+скрыть див с помощью jquery по таймеру
+http://stackoverflow.com/questions/820951/hide-div-after-a-few-seconds
+
+
+
+===
+170315
+
+QR query: testQRcode
+
+Array
+(
+    [rid] => 1
+    [qr-code] => fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der
+    [brand] => Johnny Walker
+    [importer] => Diageo
+    [distributor] => Grupo Exito
+    [reference] => Whisky
+    [sub-reference] => Red Label
+    [date-import] => 15-05-2016
+    [date-creation] => 14-03-2017
+    [lot-number] => 10253
+    [number-query] => 5
+    [date-first-query] => 12-03-2017
+    [date-expiration] => 18-05-2025
+    [user] => test
+    [aux] => 
+)
+Array
+(
+    [rid] => 2
+    [qr-code] => fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det
+    [brand] => Johnny Walker
+    [importer] => Diageo
+    [distributor] => Grupo Exito
+    [reference] => Whisky
+    [sub-reference] => Red Label
+    [date-import] => 15-05-2016
+    [date-creation] => 14-03-2017
+    [lot-number] => 10253
+    [number-query] => 
+    [date-first-query] => 
+    [date-expiration] => 18-05-2025
+    [user] => test
+    [aux] => 
+)
+
+===
+170314
+
+создал FTP
+qrcode@trueliq.com:QrC0d3170314
+
+cPanel - español latinoamericano
+
+Google Developer (chrome)
+trueliqapp@gmail.com
+Alemania12$
+
+Apple Developer (FF)
+it@trueliq.com
+Alemania12$
+
+Cpanel (php web service)
+
+https://www.hostingvox.com:2083
+user: trueliq
+pass: Alemania12$
+
+Mysql Database
+server: db.trueliq.com:3306
+dbname : trueliq
+table: trueliq
+user: trueliq
+pass: Colombia12$
+
+

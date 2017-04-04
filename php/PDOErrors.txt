@@ -1,0 +1,16 @@
+
+1489557695	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dELECT * FROM trueliq' at line 1
+1489557717	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dELECT * FROM trueliq' at line 1
+1489558184	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qr' in 'where clause'
+1489558211	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qrcode' in 'where clause'
+1489558332	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Walker' at line 1
+1489558355	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qr' in 'where clause'
+1489558367	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '\-code = "Johnny Walker"' at line 1
+1489558727	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'testQRcode' in 'where clause'
+1489558749	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der' in 'where clause'
+1489558759	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der' in 'where clause'
+1489558802	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der' in 'where clause'
+1489558814	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der' in 'where clause'
+1489558842	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der' in 'where clause'
+1489558864	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der' in 'where clause'
+1489558908	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der' in 'where clause'
