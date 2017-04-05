@@ -14,3 +14,8 @@
 1489558842	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der' in 'where clause'
 1489558864	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der' in 'where clause'
 1489558908	SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der' in 'where clause'
+1491287975	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '( `date-first-query` ) = '04-04-2017'  WHERE ( `qr-code` = 'fjnjkk534jn53kj6nk3j' at line 1
+20170404-124024	SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+20170404-124202	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`number-query` = null WHERE `qr-code` = 'fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3de' at line 1
+20170404-124232	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`number-query` = '' WHERE `qr-code` = 'fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det1' at line 1
+20170404-150938	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`number-query` = '1' WHERE `qr-code` = 'fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det' at line 1

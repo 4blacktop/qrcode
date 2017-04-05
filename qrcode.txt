@@ -6,6 +6,17 @@
 ===
 170403
 
+работа со скриптами:
+
+листинг БД
+http://trueliq.com/list.php
+
+сброс fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det
+http://scr.ru/qrcode/php/reset.php?qrcode=fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det
+
+запрос для fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det
+http://scr.ru/qrcode/php/search.php?qrcode=fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det
+
 сертификат для iOS
 http://docs.phonegap.com/phonegap-build/signing/ios/#create-provisioning-profile
 https://www.iandevlin.com/blog/2012/11/phonegap/building-an-ios-signing-key-for-phonegap-in-windows
@@ -110,3 +121,9 @@ user: trueliq
 pass: Colombia12$
 
 
+Project:
+The project is develop a small application in iphone and android devices, using html , javascript, using phonegap or similar, the application will have only one function read a QR barcode match with a database via webservice, show the result in the screen and update the database indicate this item was read.
+The app must have embedded QR reader, without install other QR in the device.
+The web services must be developed in php ( I will give access to the server that use cpanel) .
+The database is mysql. (I will access to the mysql aws instance) and the database is ready with all the fields
+Code the html, css and javascript, we will provide the graphic design psd
