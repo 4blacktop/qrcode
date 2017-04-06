@@ -3,7 +3,7 @@
     <name>Trueliq</name>
 
     <description>
-        Trueliq QR Code Scanner
+        QR Code Scanner
     </description>
 
 	<author href="http://vladimirklochkov.ru" email="4blogga@gmail.com">Vladimir Klochkov</author>
@@ -12,7 +12,6 @@
     <!-- <gap:plugin name="com.manateeworks.barcodescanner"  source="npm" /> -->
 	
 	<access origin="*" />
-	<uses-permission android:name="android.permission.INTERNET" />
 	
 	
     <plugin name="com.phonegap.plugins.barcodescanner"  source="npm" /> <!-- https://www.npmjs.com/package/ng-phonegap-plugin-barcodescanner -->
