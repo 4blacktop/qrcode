@@ -1,25 +1,14 @@
 $(function() {// Handler for .ready() called.
-	// alert("sdfhdf");
+	// alert("Handler for .ready() called");
 	$("#result").hide();
 });
 
 
-// alert("sdfhdf"):
-
 function scan(){
-	// console.log("clicked");
-	// document.getElementById('result').innerHTML = 'test';
-	cordova.plugins.barcodeScanner.scan(function(result){
-		// success callback
-		// alert(JSON.stringify(result));
-		// alert("We got a barcode\n" +
-		// "Result: " + result.text + "\n" +
-		// "Format: " + result.format + "\n" +
-		// "Cancelled: " + result.cancelled);
-		document.getElementById('result').innerHTML = "Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled;
-		
-	},function(error){
-		// error callback
+	cordova.plugins.barcodeScanner.scan(function(result){ // success callback
+		// document.getElementById('result').innerHTML = "Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled;
+		checkResult(result.text);
+	},function(error){ // error callback
 		// alert(JSON.stringify(error));
 		// alert("Scanning failed: " + error);
 		document.getElementById('result').innerHTML = JSON.stringify(error);
@@ -34,104 +23,109 @@ function scan(){
 	);
 }
 
-function test(){
-	// alert("test");
-	/* $.ajax({
-	// url: "test.html",
-	// url: "http://trueliq.com/test.php",
-	url: "http://trueliq.com/test.php",
-	context: document.body,
-	dataType : "json",  
-	success: function(){
-		// $(this).addClass("done");
-		document.getElementById('result').innerHTML = ";
-	}
-	}); */
-	// $( ".result" ).html( data );
-	
-	// $.get( "http://trueliq.com/test.php", function( data ) {
-	// $.get( "http://scr.ru/qrcode/php/test.php?qrcode=fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det", function( data ) {
- 	$.get( "http://scr.ru/qrcode/php/test.php?qrcode=fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det", function( data ) {
-		// alert( "Load was performed." );
-		// document.getElementById('result').innerHTML = data.qr-code + "<br />" + data.sub-reference;
-		// $("#result").fadeIn(1000);
-		document.getElementById('result').innerHTML = 
-		data["reference"] + " " + data["brand"] + "<br />" + 
-		data["sub-reference"] + "<br />" + 
-		data["importer"] + "<br />" + 
-		data["date-import"] + "<br />" + 
-		"Lote: " + data["lot-number"] + "<br />" + 
-		"First Query: " + data["date-first-query"] + "<br />" + 
-		"Expiration: " + data["date-expiration"];
-		document.getElementById('icon').innerHTML = '<img src="img/icon-ok.png" width="100%" alt="ok" />';
-		document.getElementById('home').innerHTML = '<img src="img/icon-app-big.png" height="100%" alt="home" />';
-		$("#home").show();
-		$("#result").show();
-		$("#icon").show();
-		$("#wrapper").hide();
+function testDet(){// debug
+	checkResult('fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det');
+}
 
-		$("#icon").delay(2000).fadeOut(500);
-		$("#result").delay(2000).fadeOut(500);
-		$("#home").delay(2000).fadeOut(500);
-		$("#wrapper").delay(2000).fadeIn(500);
-		$("#result").delay(28000).fadeOut(2000);
+function testDer(){// debug
+	checkResult('fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der');
+}
+
+function testDer1(){// debug
+	checkResult('fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der1');
+}
+
+function checkResult(result){ // check results from qr code scanner and fires function to show content
+ 	$.get( "http://scr.ru/qrcode/php/search.php?qrcode=" + result, function( data ) { // ajax GET // console.log('data: ' + data.toSource());
+		if(data == Boolean(false)) { // error qr code not found
+			 error();
+		} else {
+			if (data['date-first-query'] == null) { // first query
+				ok(data);
+			} else { // already queried
+				warning(data);
+			}
+		}
 	}); 
 }
 
-function ok(){
+function reset(){ // debug, resets 'date-first-query' and 'number-query' to null, 
+
+ 	$.get( "http://scr.ru/qrcode/php/reset.php?qrcode=fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det", function( data ) {
+		console.log(data);
+	}); 
+}
+
+function ok(data){
 	document.getElementById('icon').innerHTML = '<img src="img/icon-ok.png" width="100%" alt="ok" />';
 	document.getElementById('home').innerHTML = '<img src="img/icon-app-big.png" height="100%" alt="home" />';
+	
+	document.getElementById('result').innerHTML = 
+	data["reference"] + " " + data["brand"] + "<br />" + 
+	data["sub-reference"] + "<br />" + 
+	data["importer"] + "<br />" + 
+	data["date-import"] + "<br />" + 
+	"Lote: " + data["lot-number"] + "<br />";
+
 	$("#home").show();
 	$("#result").show();
 	$("#icon").show();
 	$("#wrapper").hide();
-	$("#icon").delay(2000).fadeOut(500);
-	$("#result").delay(2000).fadeOut(500);
-	$("#home").delay(2000).fadeOut(500);
-	$("#wrapper").delay(2000).fadeIn(500);
-	// $("#wrapper").delay(2000).show();
+	$("#icon").delay(3000).fadeOut(500);
+	$("#result").delay(3000).fadeOut(500);
+	$("#home").delay(3000).fadeOut(500);
+	$("#wrapper").delay(3000).fadeIn(500);
 }
 
-function warning(){
-	$("#wrapper").hide();
+function warning(data){
 	document.getElementById('home').innerHTML = '<img src="img/icon-app-big.png" height="100%" alt="home" />';
-	$("#home").show();
 	document.getElementById('icon').innerHTML = '<img src="img/icon-warning.png" width="100%" alt="ok" />';
+	
+	document.getElementById('result').innerHTML = 
+	'<div><font color="#e35520">este código<br />ya fue consultado el:</font><br />' + 
+	data["date-first-query"] + "<br />" +
+	data["reference"] + " " + data["brand"] + "<br />" + 
+	data["sub-reference"] + "<br />" + 
+	data["importer"] + "<br />" + 
+	data["date-import"] + "<div>"; 
+	
+	$("#wrapper").hide();
+	$("#result").show();
+	$("#home").show();
 	$("#icon").show();
-	$("#icon").delay(2000).fadeOut(500);
-	$("#result").delay(2000).fadeOut(500);
-	$("#home").delay(2000).fadeOut(500);
-	$("#wrapper").delay(2000).fadeIn(500);
-	// $("#wrapper").delay(2000).show();
+	$("#icon").delay(3000).fadeOut(500);
+	$("#result").delay(3000).fadeOut(500);
+	$("#home").delay(3000).fadeOut(500);
+	$("#wrapper").delay(3000).fadeIn(500);
 }
 
 function error(){
 	document.getElementById('icon').innerHTML = '<img src="img/icon-error.png" width="100%" alt="ok" />';
 	document.getElementById('home').innerHTML = '<img src="img/icon-app-big.png" height="100%" alt="home" />';
+	document.getElementById('result').innerHTML = '<font color="#e35520">cuidado este licor<br />puede ser adulterado</font>'; 
 	$("#home").show();
 	$("#icon").show();
 	$("#wrapper").hide();
-	$("#icon").delay(2000).fadeOut(500);
-	$("#result").delay(2000).fadeOut(500);
-	$("#home").delay(2000).fadeOut(500);
-	$("#wrapper").delay(2000).fadeIn(500);
-	// $("#wrapper").delay(2000).show();
+	$("#result").show();
+	$("#icon").delay(3000).fadeOut(500);
+	$("#result").delay(3000).fadeOut(500);
+	$("#home").delay(3000).fadeOut(500);
+	$("#wrapper").delay(3000).fadeIn(500);
 }
 
 function networkOffline(){
+	document.getElementById('icon').innerHTML = '<img src="img/icon-offline.png" width="100%" alt="ok" />';
+	document.getElementById('result').innerHTML = '<font color="#e35520">revise su<br />conexión de red</font>'; 
 	$("#wrapper").hide();
 	$("#home").hide();
-	document.getElementById('icon').innerHTML = '<img src="img/icon-offline.png" width="100%" alt="ok" />';
 	$("#icon").show();
-	// $("#icon").delay(1000).fadeOut(500);
-	// $("#result").delay(1000).fadeOut(500);
-	// $("#wrapper").delay(1000).fadeIn(500);
-	// $("#wrapper").delay(2000).show();
+	$("#result").show();
 }
 
 function networkOnline(){
 	$("#wrapper").show();
 	$("#icon").hide();
+	$("#result").hide();
 }
 
 function home(){
@@ -140,22 +134,3 @@ function home(){
 	$("#home").hide();
 	$("#wrapper").show();
 }
-
-/* function preloadImages(){
-	preload([
-		'img/icon-app-big.png',
-		'img/icon-error.png',
-		'img/icon-offline.png',
-		'img/icon-ok.png',
-		'img/icon-scan.png',
-		'img/icon-warning.png',
-		'img/logo-trueliq.png',
-	]);
-}
-
-
-function preload(arrayOfImages) {
-    $(arrayOfImages).each(function () {
-        $('<img />').attr('src',this).appendTo('body').css('display','none');
-    });
-} */

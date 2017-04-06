@@ -2,6 +2,29 @@
 
 
 
+===
+170405
+
+Hi Nicolas
+
+I have a couple of questions:
+
+1. In your pdf I see page 6 with yellow warning saying 'este código ya fue consultado el / This code has already been consulted'.  I'm little bit confused on translation, could you please describe what does it mean?
+
+(see screenshot: https://i.gyazo.com/ffeadb5a5d20dce6f2cd090d105f68b8.png).
+
+In which case should I show this page?
+
+2. Just for sure, when QR code scanned, app can receive 3 answers from server:
+- code not found (show 'red cross' error, right?)
+- code not scanned before (what page should I show, green 'check mark' with liquor information ?)
+- code scanned before (what page should I show, 'este código ya fue consultado el'?)
+
+Best regards,
+Vladimir
+
+
+
 
 ===
 170403
