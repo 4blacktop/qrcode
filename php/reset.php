@@ -6,8 +6,8 @@
 
 ini_set("display_errors", "1");
 error_reporting(E_ALL);
-// header("Access-Control-Allow-Origin:*");
-header("Content-Type: application/json");
+header('content-type: application/json; charset=utf-8');
+header("access-control-allow-origin: *");
 // echo '<pre>';
 
 $today = date("d-m-Y", time());
