@@ -1,10 +1,10 @@
 $(function() {// Handler for .ready() called.
 	alert("Handler for .ready() called");
 	$("#result").hide();
-	alert('ready');
+	// alert('ready');
 	
 	
-	 	$.get( "http://trueliq.com/search.php?qrcode=fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det", function( data ) { // ajax GET // console.log('data: ' + data.toSource());
+/* 	 	$.get( "http://trueliq.com/search.php?qrcode=fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det", function( data ) { // ajax GET // console.log('data: ' + data.toSource());
 		// alert('data: ' + data.toSource());
 		alert('data: ' + data);
 		if(data == Boolean(false)) { // error qr code not found
@@ -19,7 +19,7 @@ $(function() {// Handler for .ready() called.
 				warning(data);
 			}
 		}
-	}); 
+	});  */
 });
 
 
