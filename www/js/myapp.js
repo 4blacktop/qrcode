@@ -41,9 +41,12 @@ alert('testDer1');
 }
 
 function checkResult(result){ // check results from qr code scanner and fires function to show content
-alert('checkResult');
+alert('checkResult: ' + result);
+alert('checkResult.toSource(): ' + result.toSource());
  	$.get( "http://trueliq.com/search.php?qrcode=" + result, function( data ) { // ajax GET // console.log('data: ' + data.toSource());
+		alert('data: ' + data.toSource());
 		if(data == Boolean(false)) { // error qr code not found
+			alert('error');
 			 error();
 		} else {
 			if (data['date-first-query'] == null) { // first query
