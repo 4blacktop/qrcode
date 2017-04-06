@@ -42,7 +42,7 @@ alert('testDer1');
 
 function checkResult(result){ // check results from qr code scanner and fires function to show content
 alert('checkResult');
- 	$.get( "http://trueliq.com/search.php?qrcode=" + result, function( data ) { // ajax GET // console.log('data: ' + data.toSource());
+ 	$.get( "http://scr.ru/qrcode/php/search.php?qrcode=" + result, function( data ) { // ajax GET // console.log('data: ' + data.toSource());
 		if(data == Boolean(false)) { // error qr code not found
 			 error();
 		} else {
@@ -57,7 +57,7 @@ alert('checkResult');
 
 function reset(){ // debug, resets 'date-first-query' and 'number-query' to null, 
 alert('reset');
- 	$.get( "http://trueliq.com/reset.php?qrcode=fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det", function( data ) {
+ 	$.get( "http://scr.ru/qrcode/php/reset.php?qrcode=fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det", function( data ) {
 		console.log(data);
 	}); 
 }
