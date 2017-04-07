@@ -161,7 +161,7 @@ function onOffline(){
 	$("#wrapper").hide();
 	$("#home").hide();
 	$("#icon").show();
-	$("#result").show();
+	$("#result").show(); 
 }
 
 function onOnline(){
