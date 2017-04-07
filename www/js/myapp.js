@@ -1,5 +1,8 @@
+document.addEventListener("offline", onOffline, false);
+document.addEventListener("online", onOnline, false);
+
 $(function() {// Handler for .ready() called.
-	alert("Handler for .ready() called");
+	// alert("Handler for .ready() called");
 	$("#result").hide();
 	// alert('ready');
 	
@@ -24,7 +27,7 @@ $(function() {// Handler for .ready() called.
 
 
 function scan(){
-	alert('scan');
+	// alert('scan');
 	cordova.plugins.barcodeScanner.scan(function(result){ // success callback
 		// document.getElementById('result').innerHTML = "Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled;
 		checkResult(result.text);
@@ -44,36 +47,36 @@ function scan(){
 }
 
 function testDet(){// debug
-alert('testDet');
+// alert('testDet');
 	checkResult('fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det');
 }
 
 function testDer(){// debug
-alert('testDer');
+// alert('testDer');
 	checkResult('fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der');
 }
 
 function testDer1(){// debug
-alert('testDer1');
+// alert('testDer1');
 	checkResult('fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der1');
 }
 
 function checkResult(result){ // check results from qr code scanner and fires function to show content
-alert('checkResult: ' + result);
+// alert('checkResult: ' + result);
 // alert('checkResult.toSource(): ' + result.toSource());
  	// $.get( "http://trueliq.com/search.php?qrcode=" + result, function( data ) { // ajax GET // console.log('data: ' + data.toSource());
  	$.get( "http://trueliq.com/search.php?qrcode=fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det", function( data ) { // ajax GET // console.log('data: ' + data.toSource());
 		// alert('data: ' + data.toSource());
-		alert('data: ' + data);
+		// alert('data: ' + data);
 		if(data == Boolean(false)) { // error qr code not found
-			alert('error');
+			// alert('error');
 			 error();
 		} else {
 			if (data['date-first-query'] == null) { // first query
-			alert('ok');
+			// alert('ok');
 				ok(data);
 			} else { // already queried
-			alert('warning');
+			// alert('warning');
 				warning(data);
 			}
 		}
@@ -88,10 +91,12 @@ alert('reset');
 }
 
 function ok(data){
-	alert('ok');
+	// alert('ok');
 	document.getElementById('icon').innerHTML = '<img src="img/icon-ok.png" width="100%" alt="ok" />';
 	document.getElementById('home').innerHTML = '<img src="img/icon-app-big.png" height="100%" alt="home" />';
 	
+	
+
 	document.getElementById('result').innerHTML = 
 	data["reference"] + " " + data["brand"] + "<br />" + 
 	data["sub-reference"] + "<br />" + 
@@ -110,7 +115,7 @@ function ok(data){
 }
 
 function warning(data){
-	alert('warning');
+	// alert('warning');
 	document.getElementById('home').innerHTML = '<img src="img/icon-app-big.png" height="100%" alt="home" />';
 	document.getElementById('icon').innerHTML = '<img src="img/icon-warning.png" width="100%" alt="ok" />';
 	
@@ -120,7 +125,9 @@ function warning(data){
 	data["reference"] + " " + data["brand"] + "<br />" + 
 	data["sub-reference"] + "<br />" + 
 	data["importer"] + "<br />" + 
-	data["date-import"] + "<div>"; 
+	data["date-import"] + 
+	"DEBUG: number-query: " + data["number-query"] +
+	"</div>"; 
 	
 	$("#wrapper").hide();
 	$("#result").show();
@@ -133,7 +140,7 @@ function warning(data){
 }
 
 function error(){
-	alert('error');
+	// alert('error');
 	document.getElementById('icon').innerHTML = '<img src="img/icon-error.png" width="100%" alt="ok" />';
 	document.getElementById('home').innerHTML = '<img src="img/icon-app-big.png" height="100%" alt="home" />';
 	document.getElementById('result').innerHTML = '<font color="#e35520">cuidado este licor<br />puede ser adulterado</font>'; 
@@ -147,8 +154,8 @@ function error(){
 	$("#wrapper").delay(3000).fadeIn(500);
 }
 
-function networkOffline(){
-	alert('networkOffline');
+function onOffline(){
+	// alert('networkOffline');
 	document.getElementById('icon').innerHTML = '<img src="img/icon-offline.png" width="100%" alt="ok" />';
 	document.getElementById('result').innerHTML = '<font color="#e35520">revise su<br />conexión de red</font>'; 
 	$("#wrapper").hide();
@@ -157,15 +164,15 @@ function networkOffline(){
 	$("#result").show();
 }
 
-function networkOnline(){
-	alert('networkOnline');
+function onOnline(){
+	// alert('networkOnline');
 	$("#wrapper").show();
 	$("#icon").hide();
 	$("#result").hide();
 }
 
 function home(){
-	alert('home');
+	// alert('home');
 	$("#icon").hide();
 	$("#result").hide();
 	$("#home").hide();
