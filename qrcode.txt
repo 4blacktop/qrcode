@@ -1,6 +1,15 @@
 
 
 
+===
+170407
+
+преобразование dd-mm-yyyy в дату
+http://stackoverflow.com/questions/7151543/convert-dd-mm-yyyy-string-to-date
+
+преобразование даты формат
+https://learn.javascript.ru/datetime
+
 
 ===
 170405

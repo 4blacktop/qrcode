@@ -101,17 +101,17 @@ function ok(data){
 	data["reference"] + " " + data["brand"] + "<br />" + 
 	data["sub-reference"] + "<br />" + 
 	data["importer"] + "<br />" + 
-	data["date-import"] + "<br />" + 
+	toDate(data["date-import"]) + "<br />" + 
 	"Lote: " + data["lot-number"] + "<br />";
 
 	$("#home").show();
 	$("#result").show();
 	$("#icon").show();
 	$("#wrapper").hide();
-	$("#icon").delay(3000).fadeOut(500);
-	$("#result").delay(3000).fadeOut(500);
-	$("#home").delay(3000).fadeOut(500);
-	$("#wrapper").delay(3000).fadeIn(500);
+	$("#icon").delay(30000).fadeOut(500);
+	$("#result").delay(30000).fadeOut(500);
+	$("#home").delay(30000).fadeOut(500);
+	$("#wrapper").delay(30000).fadeIn(500);
 }
 
 function warning(data){
@@ -121,22 +121,22 @@ function warning(data){
 	
 	document.getElementById('result').innerHTML = 
 	'<div><font color="#e35520">este código<br />ya fue consultado el:</font><br />' + 
-	data["date-first-query"] + "<br />" +
+	toDate(data["date-first-query"]) + "<br />" +
 	data["reference"] + " " + data["brand"] + "<br />" + 
 	data["sub-reference"] + "<br />" + 
 	data["importer"] + "<br />" + 
-	data["date-import"] + 
-	"DEBUG: number-query: " + data["number-query"] +
+	toDate(data["date-import"]) + 
 	"</div>"; 
+	// "DEBUG: number-query: " + data["number-query"] +
 	
 	$("#wrapper").hide();
 	$("#result").show();
 	$("#home").show();
 	$("#icon").show();
-	$("#icon").delay(3000).fadeOut(500);
-	$("#result").delay(3000).fadeOut(500);
-	$("#home").delay(3000).fadeOut(500);
-	$("#wrapper").delay(3000).fadeIn(500);
+	$("#icon").delay(30000).fadeOut(500);
+	$("#result").delay(30000).fadeOut(500);
+	$("#home").delay(30000).fadeOut(500);
+	$("#wrapper").delay(30000).fadeIn(500);
 }
 
 function error(){
@@ -148,10 +148,10 @@ function error(){
 	$("#icon").show();
 	$("#wrapper").hide();
 	$("#result").show();
-	$("#icon").delay(3000).fadeOut(500);
-	$("#result").delay(3000).fadeOut(500);
-	$("#home").delay(3000).fadeOut(500);
-	$("#wrapper").delay(3000).fadeIn(500);
+	$("#icon").delay(30000).fadeOut(500);
+	$("#result").delay(30000).fadeOut(500);
+	$("#home").delay(30000).fadeOut(500);
+	$("#wrapper").delay(30000).fadeIn(500);
 }
 
 function onOffline(){
@@ -177,4 +177,14 @@ function home(){
 	$("#result").hide();
 	$("#home").hide();
 	$("#wrapper").show();
+}
+
+function toDate(dateStr) { // http://stackoverflow.com/questions/7151543/convert-dd-mm-yyyy-string-to-date
+    var parts = dateStr.split("-");
+	var monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+	dateConverted = new Date(parts[2], parts[1] - 1, parts[0]);
+	dateFormatted = dateConverted.getDate() + ' ' + monthNames[dateConverted.getMonth()] + " " + dateConverted.getFullYear();
+	console.log(dateFormatted);
+	
+    return dateFormatted;
 }
