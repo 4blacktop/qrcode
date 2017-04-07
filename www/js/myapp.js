@@ -84,7 +84,7 @@ function checkResult(result){ // check results from qr code scanner and fires fu
 }
 
 function reset(){ // debug, resets 'date-first-query' and 'number-query' to null, 
-alert('reset');
+// alert('reset');
  	$.get( "http://trueliq.com/reset.php?qrcode=fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det", function( data ) {
 		console.log(data);
 	}); 
