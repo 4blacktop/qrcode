@@ -2,7 +2,7 @@ document.addEventListener("offline", onOffline, false);
 document.addEventListener("online", onOnline, false);
 
 $(function() {// Handler for .ready() called.
-	// alert("Handler for .ready() called");
+	alert("Handler for .ready() called");
 	$("#result").hide();
 	scan();
 	// alert('ready');
@@ -24,6 +24,10 @@ $(function() {// Handler for .ready() called.
 			}
 		}
 	});  */
+});
+
+document.addEventListener('deviceready', function () {
+	
 });
 
 
