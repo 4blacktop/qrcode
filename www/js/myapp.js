@@ -4,6 +4,7 @@ document.addEventListener("online", onOnline, false);
 $(function() {// Handler for .ready() called.
 	// alert("Handler for .ready() called");
 	$("#result").hide();
+	scan();
 	// alert('ready');
 	
 	
@@ -65,8 +66,8 @@ function testDer1(){// debug
 function checkResult(result){ // check results from qr code scanner and fires function to show content
 // alert('checkResult: ' + result);
 // alert('checkResult.toSource(): ' + result.toSource());
- 	// $.get( "http://trueliq.com/search.php?qrcode=" + result, function( data ) { // ajax GET // console.log('data: ' + data.toSource());
- 	$.get( "http://trueliq.com/search.php?qrcode=fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det", function( data ) { // ajax GET // console.log('data: ' + data.toSource());
+ 	$.get( "http://trueliq.com/search.php?qrcode=" + result, function( data ) { // ajax GET // console.log('data: ' + data.toSource());
+ 	// $.get( "http://trueliq.com/search.php?qrcode=fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det", function( data ) { // ajax GET // console.log('data: ' + data.toSource());
 		// alert('data: ' + data.toSource());
 		// alert('data: ' + data);
 		if(data == Boolean(false)) { // error qr code not found
