@@ -27,7 +27,8 @@ $(function() {// Handler for .ready() called.
 });
 
 document.addEventListener('deviceready', function () {
-	
+	alert("deviceready");
+	scan();
 });
 
 
