@@ -21,21 +21,26 @@ document.addEventListener('deviceready', function () {
 
 function scan(){
 	// alert('scan');
-	cordova.plugins.barcodeScanner.scan(function(result){ // success callback
-		// document.getElementById('result').innerHTML = "Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled;
-		checkResult(result.text);
-	},function(error){ // error callback
-		// document.getElementById('result').innerHTML = JSON.stringify(error); // send text to error function
-	},
-	{
-          "preferFrontCamera" : false, // iOS and Android
-          "showFlipCameraButton" : false, // iOS and Android
-		  "resultDisplayDuration" : 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
-          // "prompt" : "Place a barcode inside the scan area", // supported on Android only
-          "formats" : "QR_CODE", // default: all but PDF_417 and RSS_EXPANDED
-          "orientation" : "portrait" // Android only (portrait|landscape), default unset so it rotates with the device
-      }
-	);
+	if (navigator.connection.type == Connection.NONE) { // error qr code not found
+	alert('Connection.NONE: 25');
+			 error();
+	} else {
+		cordova.plugins.barcodeScanner.scan(function(result){ // success callback
+			// document.getElementById('result').innerHTML = "Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled;
+			checkResult(result.text);
+		},function(error){ // error callback
+			// document.getElementById('result').innerHTML = JSON.stringify(error); // send text to error function
+		},
+		{
+			  "preferFrontCamera" : false, // iOS and Android
+			  "showFlipCameraButton" : false, // iOS and Android
+			  "resultDisplayDuration" : 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+			  // "prompt" : "Place a barcode inside the scan area", // supported on Android only
+			  "formats" : "QR_CODE", // default: all but PDF_417 and RSS_EXPANDED
+			  "orientation" : "portrait" // Android only (portrait|landscape), default unset so it rotates with the device
+		  }
+		);
+	}
 }
 
 function testDet(){// debug
