@@ -94,11 +94,10 @@ function ok(data){
 	data["date-import"] + "<br />" + 
 	"Lote: " + data["lot-number"] + "<br />";
 
-	$("#wrapper").hide();
-	$("#main").show();
 	$("#home").show();
 	$("#result").show();
 	$("#icon").show();
+	$("#wrapper").hide();
 	$("#icon").delay(30000).fadeOut(500);
 	$("#result").delay(30000).fadeOut(500);
 	$("#home").delay(30000).fadeOut(500);
@@ -123,7 +122,6 @@ function warning(data){
 	// "DEBUG: number-query: " + data["number-query"] +
 	
 	$("#wrapper").hide();
-	$("#main").show();
 	$("#result").show();
 	$("#home").show();
 	$("#icon").show();
@@ -138,7 +136,6 @@ function error(){
 	document.getElementById('icon').innerHTML = '<img src="img/icon-error.png" width="100%" alt="ok" />';
 	document.getElementById('home').innerHTML = '<img src="img/icon-app-big.png" height="100%" alt="home" />';
 	document.getElementById('result').innerHTML = '<font color="#e35520">cuidado este licor<br />puede ser adulterado</font>'; 
-	$("#main").show();
 	$("#home").show();
 	$("#icon").show();
 	$("#wrapper").hide();
@@ -153,7 +150,6 @@ function onOffline(){
 	// alert('networkOffline');
 	document.getElementById('icon').innerHTML = '<img src="img/icon-offline.png" width="100%" alt="ok" />';
 	document.getElementById('result').innerHTML = '<font color="#e35520">revise su<br />conexión de red</font>'; 
-	$("#main").show();
 	$("#wrapper").hide();
 	$("#home").hide();
 	$("#icon").show();
@@ -161,7 +157,6 @@ function onOffline(){
 }
 
 function onOnline(){
-	$("#main").show();
 	// alert('networkOnline');
 	$("#wrapper").show();
 	$("#icon").hide();
@@ -170,11 +165,10 @@ function onOnline(){
 
 function home(){
 	// alert('home');
-	scan();
-	// $("#icon").hide();
-	// $("#result").hide();
-	// $("#home").hide();
-	// $("#wrapper").show();
+	$("#icon").hide();
+	$("#result").hide();
+	$("#home").hide();
+	$("#wrapper").show();
 }
 
 function toDate(dateStr) { // http://stackoverflow.com/questions/7151543/convert-dd-mm-yyyy-string-to-date
