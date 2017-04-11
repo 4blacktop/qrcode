@@ -22,7 +22,7 @@ document.addEventListener('deviceready', function () {
 function scan(){
 	// alert('scan');
 	if (navigator.connection.type == Connection.NONE) { // error qr code not found
-	alert('Connection.NONE: 25');
+	// alert('Connection.NONE: 25');
 			 error();
 	} else {
 		cordova.plugins.barcodeScanner.scan(function(result){ // success callback
