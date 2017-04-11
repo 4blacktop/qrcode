@@ -20,9 +20,7 @@ function scan(){
 		// document.getElementById('result').innerHTML = "Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled;
 		checkResult(result.text);
 	},function(error){ // error callback
-		// alert(JSON.stringify(error));
-		// alert("Scanning failed: " + error);
-		document.getElementById('result').innerHTML = JSON.stringify(error);
+		// document.getElementById('result').innerHTML = JSON.stringify(error); // send text to error function
 	},
 	{
           "preferFrontCamera" : false, // iOS and Android
