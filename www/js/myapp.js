@@ -23,7 +23,7 @@ function scan(){
 	// alert('scan');
 	if (navigator.connection.type == Connection.NONE) { // error qr code not found
 	// alert('Connection.NONE: 25');
-			 error();
+			 onOffline();
 	} else {
 		cordova.plugins.barcodeScanner.scan(function(result){ // success callback
 			// document.getElementById('result').innerHTML = "Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled;
