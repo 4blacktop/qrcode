@@ -9,9 +9,14 @@ $(function() {// Handler for .ready() called.
 	scan();
 });
 
+document.addEventListener("backbutton", onBackKeyDown, false);
+function onBackKeyDown(e) {
+  e.preventDefault();
+}
 document.addEventListener('deviceready', function () {
 	scan();
 });
+
 
 
 function scan(){
