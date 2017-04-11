@@ -104,7 +104,7 @@ function ok(data){
 	// $("#home").delay(30000).fadeOut(500);
 	// $("#wrapper").delay(30000).fadeIn(500);
 	
-	setTimeout(scan(), 10000);
+	setTimeout(scan, 10000);
 }
 
 function warning(data){
@@ -133,7 +133,7 @@ function warning(data){
 	// $("#result").delay(30000).fadeOut(500);
 	// $("#home").delay(30000).fadeOut(500);
 	// $("#wrapper").delay(30000).fadeIn(500);
-	setTimeout(scan(), 10000);
+	setTimeout(scan, 10000);
 }
 
 function error(){
@@ -150,7 +150,7 @@ function error(){
 	// $("#result").delay(30000).fadeOut(500);
 	// $("#home").delay(30000).fadeOut(500);
 	// $("#wrapper").delay(30000).fadeIn(500);
-	setTimeout(scan(), 10000);
+	setTimeout(scan, 10000);
 }
 
 function onOffline(){
