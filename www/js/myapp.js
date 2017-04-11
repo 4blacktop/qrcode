@@ -2,8 +2,11 @@ document.addEventListener("offline", onOffline, false);
 document.addEventListener("online", onOnline, false);
 
 $(function() {// Handler for .ready() called.
-	$("#result").hide();
+
+	// $("#result").hide();
+	$("#main").hide();
 	// alert('ready');
+	scan();
 });
 
 document.addEventListener('deviceready', function () {
@@ -83,11 +86,12 @@ function ok(data){
 	
 	
 
+	// toDate(data["date-import"]) + "<br />" + 
 	document.getElementById('result').innerHTML = 
 	data["reference"] + " " + data["brand"] + "<br />" + 
 	data["sub-reference"] + "<br />" + 
 	data["importer"] + "<br />" + 
-	toDate(data["date-import"]) + "<br />" + 
+	data["date-import"] + "<br />" + 
 	"Lote: " + data["lot-number"] + "<br />";
 
 	$("#home").show();
@@ -105,13 +109,15 @@ function warning(data){
 	document.getElementById('home').innerHTML = '<img src="img/icon-app-big.png" height="100%" alt="home" />';
 	document.getElementById('icon').innerHTML = '<img src="img/icon-warning.png" width="100%" alt="ok" />';
 	
+	// toDate(data["date-first-query"]) + "<br />" +
+	// toDate(data["date-import"]) + 
 	document.getElementById('result').innerHTML = 
 	'<div><font color="#e35520">este código<br />ya fue consultado el:</font><br />' + 
-	toDate(data["date-first-query"]) + "<br />" +
+	data["date-first-query"] + "<br />" +
 	data["reference"] + " " + data["brand"] + "<br />" + 
 	data["sub-reference"] + "<br />" + 
 	data["importer"] + "<br />" + 
-	toDate(data["date-import"]) + 
+	data["date-import"] + 
 	"</div>"; 
 	// "DEBUG: number-query: " + data["number-query"] +
 	
