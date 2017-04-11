@@ -85,12 +85,11 @@ body{
 	display: block;
 	text-align: center;
 }
-
+/* 
 .wrapper{
 	position: absolute;
 	top: calc(50% - 50px);
 	left: calc(50% - 50px);
-	/* background: red; */
 	background:  url(../img/icon-scan.png);
 	background-size: cover;
 	width: 100px;
@@ -112,7 +111,6 @@ body{
 	position: absolute;
 	right: 0px;
 	bottom: 5px;
-	/* -webkit-animation: flash 4.0s infinite linear; */
 }
 
 
@@ -135,6 +133,7 @@ body{
 	bottom: 5px;
 	}
 }
+ */
 
 /* div #preload {
 	display: none;

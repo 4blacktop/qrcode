@@ -94,17 +94,15 @@ function ok(data){
 	data["date-import"] + "<br />" + 
 	"Lote: " + data["lot-number"] + "<br />";
 
-	// $("#wrapper").hide();
+	$("#wrapper").hide();
 	$("#main").show();
 	$("#home").show();
 	$("#result").show();
 	$("#icon").show();
-	// $("#icon").delay(30000).fadeOut(500);
-	// $("#result").delay(30000).fadeOut(500);
-	// $("#home").delay(30000).fadeOut(500);
-	// $("#wrapper").delay(30000).fadeIn(500);
-	
-	setTimeout(scan(), 10000);
+	$("#icon").delay(30000).fadeOut(500);
+	$("#result").delay(30000).fadeOut(500);
+	$("#home").delay(30000).fadeOut(500);
+	$("#wrapper").delay(30000).fadeIn(500);
 }
 
 function warning(data){
@@ -124,16 +122,15 @@ function warning(data){
 	"</div>"; 
 	// "DEBUG: number-query: " + data["number-query"] +
 	
-	// $("#wrapper").hide();
+	$("#wrapper").hide();
 	$("#main").show();
 	$("#result").show();
 	$("#home").show();
 	$("#icon").show();
-	// $("#icon").delay(30000).fadeOut(500);
-	// $("#result").delay(30000).fadeOut(500);
-	// $("#home").delay(30000).fadeOut(500);
-	// $("#wrapper").delay(30000).fadeIn(500);
-	setTimeout(scan(), 10000);
+	$("#icon").delay(30000).fadeOut(500);
+	$("#result").delay(30000).fadeOut(500);
+	$("#home").delay(30000).fadeOut(500);
+	$("#wrapper").delay(30000).fadeIn(500);
 }
 
 function error(){
@@ -144,13 +141,12 @@ function error(){
 	$("#main").show();
 	$("#home").show();
 	$("#icon").show();
-	// $("#wrapper").hide();
+	$("#wrapper").hide();
 	$("#result").show();
-	// $("#icon").delay(30000).fadeOut(500);
-	// $("#result").delay(30000).fadeOut(500);
-	// $("#home").delay(30000).fadeOut(500);
-	// $("#wrapper").delay(30000).fadeIn(500);
-	setTimeout(scan(), 10000);
+	$("#icon").delay(30000).fadeOut(500);
+	$("#result").delay(30000).fadeOut(500);
+	$("#home").delay(30000).fadeOut(500);
+	$("#wrapper").delay(30000).fadeIn(500);
 }
 
 function onOffline(){
@@ -158,20 +154,18 @@ function onOffline(){
 	document.getElementById('icon').innerHTML = '<img src="img/icon-offline.png" width="100%" alt="ok" />';
 	document.getElementById('result').innerHTML = '<font color="#e35520">revise su<br />conexión de red</font>'; 
 	$("#main").show();
-	// $("#wrapper").hide();
+	$("#wrapper").hide();
 	$("#home").hide();
 	$("#icon").show();
 	$("#result").show(); 
 }
 
 function onOnline(){
-	scan();
-	
-	/* $("#main").show();
+	$("#main").show();
 	// alert('networkOnline');
-	// $("#wrapper").show();
+	$("#wrapper").show();
 	$("#icon").hide();
-	$("#result").hide(); */
+	$("#result").hide();
 }
 
 function home(){
