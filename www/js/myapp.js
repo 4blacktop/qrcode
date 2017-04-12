@@ -35,7 +35,17 @@ function scan(){
 		cordova.plugins.barcodeScanner.scan(function(result){ // success callback
 			// document.getElementById('result').innerHTML = "Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled;
 			alert("Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled);
-			checkResult(result.text);
+			if(result.cancelled) {
+				document.getElementById('icon').innerHTML = '<img src="img/icon-error.png" width="100%" alt="ok" />';
+				document.getElementById('home').innerHTML = '<img src="img/icon-app-big.png" height="100%" alt="home" />';
+				document.getElementById('result').innerHTML = '<font color="#e35520">scan<br />cancelled</font>'; 
+				$("#main").show();
+				$("#home").show();
+				$("#icon").show();
+				$("#result").show();
+			} else {
+				checkResult(result.text);
+			}
 		},function(error){ // error callback
 			document.getElementById('result').innerHTML = JSON.stringify(error); // send text to error function
 			$("#result").show();
@@ -164,8 +174,8 @@ function error(){
 	$("#main").show();
 	$("#home").show();
 	$("#icon").show();
-	// $("#wrapper").hide();
 	$("#result").show();
+	// $("#wrapper").hide();
 	// $("#icon").delay(30000).fadeOut(500);
 	// $("#result").delay(30000).fadeOut(500);
 	// $("#home").delay(30000).fadeOut(500);
