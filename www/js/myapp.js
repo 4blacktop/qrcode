@@ -27,6 +27,7 @@ function scan(){
 			 onOffline();
 	} else {
 		document.getElementById('result').innerHTML = '';
+		document.getElementById('icon').innerHTML = '';
 		cordova.plugins.barcodeScanner.scan(function(result){ // success callback
 			// document.getElementById('result').innerHTML = "Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled;
 			checkResult(result.text);
