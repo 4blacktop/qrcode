@@ -1,8 +1,6 @@
 document.addEventListener("offline", onOffline, false);
 document.addEventListener("online", onOnline, false);
 
-var timeoutID;
-
 $(function() {// Handler for .ready() called.
 
 	// $("#result").hide();
@@ -24,7 +22,6 @@ document.addEventListener('deviceready', function () {
 
 function scan(){
 	// alert('scan');
-	window.clearTimeout(timeoutID);
 	if (navigator.connection.type == Connection.NONE) { // error qr code not found
 	// alert('Connection.NONE: 25');
 			 onOffline();
@@ -40,7 +37,7 @@ function scan(){
 		{
 			  "preferFrontCamera" : false, // iOS and Android
 			  "showFlipCameraButton" : false, // iOS and Android
-			  "resultDisplayDuration" : 0, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+			  "resultDisplayDuration" : 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
 			  // "prompt" : "Place a barcode inside the scan area", // supported on Android only
 			  "formats" : "QR_CODE", // default: all but PDF_417 and RSS_EXPANDED
 			  "orientation" : "portrait" // Android only (portrait|landscape), default unset so it rotates with the device
@@ -118,8 +115,7 @@ function ok(data){
 	// $("#home").delay(30000).fadeOut(500);
 	// $("#wrapper").delay(30000).fadeIn(500);
 	
-	// setTimeout(scan, 10000);
-	timeoutID = window.setTimeout(scan, 10000);
+	setTimeout(scan, 10000);
 }
 
 function warning(data){
@@ -148,9 +144,7 @@ function warning(data){
 	// $("#result").delay(30000).fadeOut(500);
 	// $("#home").delay(30000).fadeOut(500);
 	// $("#wrapper").delay(30000).fadeIn(500);
-	
-	// setTimeout(scan, 10000);
-	timeoutID = window.setTimeout(scan, 10000);
+	setTimeout(scan, 10000);
 }
 
 function error(){
@@ -167,9 +161,7 @@ function error(){
 	// $("#result").delay(30000).fadeOut(500);
 	// $("#home").delay(30000).fadeOut(500);
 	// $("#wrapper").delay(30000).fadeIn(500);
-	
-	// setTimeout(scan, 10000);
-	timeoutID = window.setTimeout(scan, 10000);
+	setTimeout(scan, 10000);
 }
 
 function onOffline(){
