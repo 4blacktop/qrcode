@@ -34,7 +34,7 @@ function scan(){
 		document.getElementById('icon').innerHTML = '';
 		cordova.plugins.barcodeScanner.scan(function(result){ // success callback
 			// document.getElementById('result').innerHTML = "Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled;
-			alert("Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled);
+			// alert("Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled);
 			if(result.cancelled) {
 				document.getElementById('icon').innerHTML = '<img src="img/icon-error.png" width="100%" alt="ok" />';
 				document.getElementById('home').innerHTML = '<img src="img/icon-app-big.png" height="100%" alt="home" />';
@@ -43,6 +43,7 @@ function scan(){
 				$("#home").show();
 				$("#icon").show();
 				$("#result").show();
+				timeoutID = window.setTimeout(scan, 10000);
 			} else {
 				checkResult(result.text);
 			}
