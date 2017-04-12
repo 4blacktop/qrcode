@@ -4,15 +4,16 @@ document.addEventListener("online", onOnline, false);
 $(function() {// Handler for .ready() called.
 
 	// $("#result").hide();
-	$("#main").hide();
 	// alert('ready');
-	scan();
+	// scan();
+	$("#main").hide();
 });
 
 document.addEventListener("backbutton", onBackKeyDown, false);
 function onBackKeyDown(e) {
   e.preventDefault();
 }
+
 document.addEventListener('deviceready', function () {
 	scan();
 });
