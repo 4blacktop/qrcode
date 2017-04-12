@@ -29,13 +29,14 @@ function scan(){
 	// alert('Connection.NONE: 25');
 			 onOffline();
 	} else {
+		$("#result").hide();
 		document.getElementById('result').innerHTML = '';
 		document.getElementById('icon').innerHTML = '';
 		cordova.plugins.barcodeScanner.scan(function(result){ // success callback
 			// document.getElementById('result').innerHTML = "Result:<br />" + result.text + "<br />" + "Format: " + result.format + "<br />" + "Cancelled: " + result.cancelled;
 			checkResult(result.text);
 		},function(error){ // error callback
-			// document.getElementById('result').innerHTML = JSON.stringify(error); // send text to error function
+			document.getElementById('result').innerHTML = JSON.stringify(error); // send text to error function
 		},
 		{
 			  "preferFrontCamera" : false, // iOS and Android
