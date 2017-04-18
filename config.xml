@@ -25,7 +25,7 @@
        <param name="key" value="willoughby"/>
     </feature> -->
 	
-	<preference name="SplashScreenDelay" value="4000" />
+	<preference name="SplashScreenDelay" value="14000" />
 
     <preference name="phonegap-version" value="cli-6.5.0" />
     <preference name="orientation"      value="portrait" />
