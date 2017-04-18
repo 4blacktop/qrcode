@@ -38,7 +38,8 @@ function scan(){
 			if(result.cancelled) {
 				document.getElementById('icon').innerHTML = '<img src="img/icon-error.png" width="100%" alt="ok" />';
 				document.getElementById('home').innerHTML = '<img src="img/icon-app-big.png" height="100%" alt="home" />';
-				document.getElementById('result').innerHTML = '<font color="#e35520">scan<br />cancelled</font>'; 
+				// document.getElementById('result').innerHTML = '<font color="#e35520">scan<br />cancelled</font>'; 
+				document.getElementById('result').innerHTML = '<font color="#e35520">escaneo<br />cancelado</font>'; 
 				$("#main").show();
 				$("#home").show();
 				$("#icon").show();
@@ -120,7 +121,7 @@ function ok(data){
 	data["sub-reference"] + "<br />" + 
 	data["importer"] + "<br />" + 
 	data["date-import"] + "<br />" + 
-	"Lote: " + data["lot-number"] + "<br />";
+	data["lot-number"] + "<br />";
 
 	// $("#wrapper").hide();
 	$("#main").show();
