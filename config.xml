@@ -14,7 +14,6 @@
 	<access origin="*" />
 	
 	
-	<plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.1.0" source="npm" />
 	<plugin name="cordova-plugin-network-information" spec="~1.3.2" />
 	<plugin name="cordova-plugin-whitelist" spec="~1.3.2" />
     <plugin name="com.phonegap.plugins.barcodescanner"  source="npm" /> <!-- https://www.npmjs.com/package/ng-phonegap-plugin-barcodescanner -->
