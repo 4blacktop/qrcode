@@ -6,6 +6,7 @@
 
 fullscreen
 https://cordova.apache.org/docs/en/latest/config_ref/index.html
+https://github.com/katzer/cordova-plugin-hidden-statusbar-overlay/tree/aef5a90d2161dd9d363242523883757a51d0fad0
 
 
 
