@@ -8,7 +8,6 @@ $(function() {// Handler for .ready() called.
 	// $("#result").hide();
 	// alert('ready');
 	// scan();
-	window.plugin.statusbarOverlay.hide();
 	$("#main").hide();
 });
 
