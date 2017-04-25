@@ -1,6 +1,39 @@
 
 
 
+===
+170425
+
+fullscreen
+https://cordova.apache.org/docs/en/latest/config_ref/index.html
+
+
+
+===
+170420
+
+общая инфа
+http://stackoverflow.com/questions/10887759/is-it-possible-to-make-a-phonegap-app-for-ios-without-mac
+https://forum.ionicframework.com/t/how-to-build-app-for-iphone-without-mac/19929/13
+
+подготовка к созданию сертификата Apple Developer / Production
+
+
+
+получение сертификата
+https://www.iandevlin.com/blog/2012/11/phonegap/building-an-ios-signing-key-for-phonegap-in-windows
+
+скачать openssl
+http://slproweb.com/products/Win32OpenSSL.html
+
+openssl genrsa -des3 -out ios.key 2048
+Alemania12$
+
+Set OPENSSL_CONF=c:\install\OpenSSL-Win64\bin\openssl.cfg
+
+openssl req -new -key ios.key -out ios.csr -subj "/emailAddress=it@trueliq.com, CN=NICOLASREVOLLO, C=CO"
+
+создал mobileprovision профиль, имя - mobileprovision
 
 
 ===
