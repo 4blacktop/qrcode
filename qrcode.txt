@@ -1,8 +1,85 @@
 
 
+===
+170430
+
+создаю production certificate
+Identifiers->App IDs
+создаю App ID
+
+app description:
+Explicit App ID: com.truliq.app
+
+openssl genrsa -des3 -out ios.key 2048
+Alemania12$
+
+openssl req -new -key ios.key -out ios.csr -subj "/emailAddress=it@trueliq.com, CN=NICOLASREVOLLO, C=CO"
+Alemania12$
+
+Apple developer:
+Certificates - production (плюсиком добавляю)
+
+загружаю из OpenSSL ios.csr
+выгрузился ios_distribution.cer
+
+openssl x509 -in ios_distribution.cer -inform DER -out ios_distribution.pem -outform PEM
+
+openssl pkcs12 -export -inkey ios.key -in ios_distribution.pem -out ios_distribution.p12
+
+
+Apple developer: создаю provisioning profile
+trueliq_distribution
+Type: iOS Distribution
+App ID: trueliq (WJVH4WAVYM.com.truliq.app)
+Certificates: 1 Included
+
+Иду в https://build.phonegap.com/
+сохраняю старый ipa
+
+
+
+short description:
+Aplicación para validar licores
+
+Full description:
+Tome licor de manera segura, con TrueLiq podra detectar licores adulterados.
+
+Country : Colombia
+
+Categorisation: Food Drink
 
 ===
 170425
+
+
+Выложить приложение Weatheris в Google Play:
+1. Залить изображения и заполнить анкету 
+https://play.google.com/apps/publish
+
+2. По мануалу получить ключ
+http://docs.build.phonegap.com/en_US/signing_signing-android.md.html
+keytool -genkey -v -keystore trueliq.keystore -alias trueliq_alias_name -keyalg RSA -keysize 2048 -validity 99999
+
+длиннннннопассы:одинаковые оба
+Alemania12$
+имя Nicolas Revollo
+подразделение Individual
+name organization trueliq
+Bogota
+Distrito Capital
+co
+В каталоге откуда запускалась командная строка появится файл
+
+3. Добавить ключ в приложение https://build.phonegap.com
+title: trueliq
+alias: trueliq_alias_name
+
+4. Разлочить ключ, ребилд приложения
+Если ошибка - идем сюда и удаляем ключ https://build.phonegap.com/people/edit
+
+5. Загрузить релиз .apk в Google Play и заполнить анкеты,
+почаще давим "сохранить" если неочевидно действие
+потом "опубликовать"
 
 fullscreen
 https://cordova.apache.org/docs/en/latest/config_ref/index.html
@@ -13,16 +90,16 @@ https://github.com/katzer/cordova-plugin-hidden-statusbar-overlay/tree/aef5a90d2
 ===
 170420
 
+скорее всего(?) делал вот по этим мануалам:
+
+полное описание сертификатов что к чему
+http://reactorapps.io/blog/ios-certificate-guide/
+получение сертификата, подготовка к созданию сертификата Apple Developer / Production
+https://www.iandevlin.com/blog/2012/11/phonegap/building-an-ios-signing-key-for-phonegap-in-windows
+
 общая инфа
 http://stackoverflow.com/questions/10887759/is-it-possible-to-make-a-phonegap-app-for-ios-without-mac
 https://forum.ionicframework.com/t/how-to-build-app-for-iphone-without-mac/19929/13
-
-подготовка к созданию сертификата Apple Developer / Production
-
-
-
-получение сертификата
-https://www.iandevlin.com/blog/2012/11/phonegap/building-an-ios-signing-key-for-phonegap-in-windows
 
 скачать openssl
 http://slproweb.com/products/Win32OpenSSL.html
