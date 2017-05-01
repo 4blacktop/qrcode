@@ -1,6 +1,27 @@
 
 
 ===
+170501
+
+скриншоты
+https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/Properties.html
+
+ERROR ITMS-90167: "No .app bundles found in the package"
+
+http://dropmefiles.com/02ush
+ipa production
+
+ошибка при Yosemite + Xcode 6.4
+
+/Applications/Xcode.app/Contents/Applications/Application Loader.app/Contents/itms/bin/../share/iTMSTransporter.woa/iTMSTransporter: line 266: [: java.lang.NullPointerException: integer expression expected
+
+Error occurred during initialization of VM
+java.lang.NullPointerException
+	at java.util.Hashtable.put(Hashtable.java:514)
+	at java.lang.System.initProperties(Native Method)
+	at java.lang.System.initializeSystemClass(System.java:1119)
+
+===
 170430
 
 создаю production certificate
@@ -35,6 +56,9 @@ Certificates: 1 Included
 
 Иду в https://build.phonegap.com/
 сохраняю старый ipa
+
+как загрузить ipa через xcode
+http://stackoverflow.com/questions/15738559/deploy-ipa-file-in-app-store-generated-by-phonegap
 
 
 
