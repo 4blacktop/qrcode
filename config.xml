@@ -75,6 +75,10 @@
     <gap:splash src="res/screen/ios/Splash-1242x2208.png"     gap:platform="ios"     width="2208" height="1242" />
 
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
+	
+	<gap:config-file platform="ios" parent="NSPhotoLibraryUsageDescription">
+		<string>Para escanear el código QR</string>
+	</gap:config-file>
 
     <!-- content src="http://www.w3.org/2010/05/video/mediaevents.html" / -->
 </widget>
