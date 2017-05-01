@@ -8,7 +8,7 @@ $(function() {// Handler for .ready() called.
 	// $("#result").hide();
 	// alert('ready');
 	// scan();
-	$("#main").hide();
+	// $("#main").hide();
 });
 
 document.addEventListener("backbutton", onBackKeyDown, false);
