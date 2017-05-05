@@ -65,7 +65,7 @@ function scan(){
 	}
 }
 
-function testDet(){// debug
+/* function testDet(){// debug
 // alert('testDet');
 	checkResult('fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3det');
 }
@@ -78,7 +78,7 @@ function testDer(){// debug
 function testDer1(){// debug
 // alert('testDer1');
 	checkResult('fjnjkk534jn53kj6nk3jh6k2j3n6nkj3ng3d3der1');
-}
+} */
 
 function checkResult(result){ // check results from qr code scanner and fires function to show content
 // alert('checkResult: ' + result);
