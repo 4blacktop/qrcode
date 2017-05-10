@@ -9,7 +9,7 @@ $(function() {// Handler for .ready() called.
 	// $("#result").hide();
 	// alert('ready');
 	// scan();
-	alert('dollar');
+	// alert('dollar');
 	navigator.splashscreen.show();
 });
 
@@ -19,10 +19,10 @@ function onBackKeyDown(e) {
 
 document.addEventListener('deviceready', function () {
 	navigator.splashscreen.show();
-	alert('deviceready');
+	// alert('deviceready');
 	// navigator.splashscreen.hide();
 
-	// $("#main").hide();
+																		// $("#main").hide();
 	// scan();
 	// setTimeout(scan, 10000);
 });
