@@ -8,7 +8,7 @@ $(function() {// Handler for .ready() called.
 	// $("#result").hide();
 	// alert('ready');
 	// scan();
-	navigator.splashscreen.show();
+	$("#main").hide();
 });
 
 document.addEventListener("backbutton", onBackKeyDown, false);
@@ -18,9 +18,9 @@ function onBackKeyDown(e) {
 
 document.addEventListener('deviceready', function () {
 	// navigator.splashscreen.hide();
+	// navigator.splashscreen.show();
 
-	// $("#main").hide();
-	// scan();
+	scan();
 	// setTimeout(scan, 10000);
 });
 
