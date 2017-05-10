@@ -27,9 +27,12 @@ document.addEventListener('deviceready', function () {
 	// setTimeout(scan, 10000);
 });
 
-
-
 function scan(){
+	navigator.splashscreen.show();
+}
+
+
+function scan1(){
 	// alert('scan');
 	window.clearTimeout(timeoutID);
 	if (navigator.connection.type == Connection.NONE) { // error qr code not found
