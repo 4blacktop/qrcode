@@ -15,7 +15,8 @@
 	
 	<plugin name="cordova-plugin-splashscreen" spec="~4.0.1" /> <!-- https://www.npmjs.com/package/cordova-plugin-splashscreen -->
 	<preference name="ShowSplashScreenSpinner" value="false"/>
-	<!-- <preference name="SplashScreenDelay" value="10" /> -->
+	<preference name="SplashScreenDelay" value="15000" />
+	<preference name="AutoHideSplashScreen" value="false" />
 
     <feature name="http://api.phonegap.com/1.0/device" />
 
