@@ -1,5 +1,6 @@
 document.addEventListener("offline", onOffline, false);
 document.addEventListener("online", onOnline, false);
+document.addEventListener("backbutton", onBackKeyDown, false);
 
 var timeoutID;
 
@@ -8,15 +9,17 @@ $(function() {// Handler for .ready() called.
 	// $("#result").hide();
 	// alert('ready');
 	// scan();
+	alert('dollar');
 	navigator.splashscreen.show();
 });
 
-document.addEventListener("backbutton", onBackKeyDown, false);
 function onBackKeyDown(e) {
   e.preventDefault();
 }
 
 document.addEventListener('deviceready', function () {
+	navigator.splashscreen.show();
+	alert('deviceready');
 	// navigator.splashscreen.hide();
 
 	// $("#main").hide();
