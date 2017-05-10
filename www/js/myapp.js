@@ -1,5 +1,5 @@
 document.addEventListener("offline", onOffline, false);
-document.addEventListener("online", onOnline, false);
+// document.addEventListener("online", onOnline, false);
 document.addEventListener("backbutton", onBackKeyDown, false);
 
 var timeoutID;
