@@ -16,7 +16,6 @@
 	<plugin name="cordova-plugin-splashscreen" spec="~4.0.1" /> <!-- https://www.npmjs.com/package/cordova-plugin-splashscreen -->
 	<preference name="ShowSplashScreenSpinner" value="false"/>
 	<preference name="SplashScreenDelay" value="15000" />
-	<preference name="AutoHideSplashScreen" value="false" />
 
     <feature name="http://api.phonegap.com/1.0/device" />
 
@@ -32,6 +31,8 @@
     <icon src="icon.png" />
 	<splash src="splash.png" />
     <platform name="android">
+		<preference name="SplashScreenDelay" value="15000" />
+		<preference name="AutoHideSplashScreen" value="false" />
         <icon   src="www/res/icon/android/drawable-ldpi-icon.png"               density="ldpi" />
         <icon   src="www/res/icon/android/drawable-mdpi-icon.png"               density="mdpi" />
         <icon   src="www/res/icon/android/drawable-hdpi-icon.png"               density="hdpi" />
