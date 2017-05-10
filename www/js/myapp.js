@@ -30,7 +30,7 @@ document.addEventListener('deviceready', function () {
 function spscreen(){
 	navigator.splashscreen.show();
 	// timeoutID = window.setTimeout(navigator.splashscreen.hide, 5000);
-	timeoutID = window.setTimeout(scan, 5000);
+	timeoutID = window.setTimeout(scan, 15000);
 	// scan();
 }
 
