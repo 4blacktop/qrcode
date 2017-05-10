@@ -13,7 +13,7 @@
     
 	<plugin name="com.phonegap.plugins.barcodescanner"  source="npm" /> <!-- https://www.npmjs.com/package/ng-phonegap-plugin-barcodescanner -->
 	
-	<plugin name="cordova-plugin-splashscreen" spec="~4.0.1" /> <!-- https://www.npmjs.com/package/cordova-plugin-splashscreen -->
+	<plugin name="cordova-plugin-splashscreen" spec="~4.0.3" /> <!-- https://www.npmjs.com/package/cordova-plugin-splashscreen -->
 	<preference name="ShowSplashScreenSpinner" value="false"/>
 	<preference name="SplashScreenDelay" value="15000" />
 
