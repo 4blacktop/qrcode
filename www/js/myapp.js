@@ -19,7 +19,9 @@ function onBackKeyDown(e) {
 document.addEventListener('deviceready', function () {
 	// navigator.splashscreen.hide();
 	// navigator.splashscreen.show();
-	scan();
+
+	// scan();
+	setTimeout(scan, 10000);
 });
 
 
